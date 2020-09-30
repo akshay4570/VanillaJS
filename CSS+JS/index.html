@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>CSS+JS</title>
+</head>
+
+<body>
+    <h2>Update CSS variables with <span class="h1">JS</span></h2>
+    <div class="controls">
+        <label for="spacing">Spacing</label>
+        <input type="range" name="spacing" id="spacing" min="10" max="200" value="10" data-sizing="px">
+
+        <label for="blur">Blur</label>
+        <input type="range" name="blur" id="blur" min="0" max="25" value="10" data-sizing="px">
+
+        <label for="base">Base Color</label>
+        <input type="color" name="base" id="base" value="#ffc600">
+    </div>
+    <img src="https://source.unsplash.com/7bwQXzbF6KE/800x500">
+
+    <style>
+        :root{
+            --base : #ffc600;
+            --spacing : 10px;
+            --blur : 10px;
+        }
+
+        img{
+            padding : var(--spacing);
+            background: var(--base);
+            filter: blur(var(--blur));
+        }
+
+        .h1{
+            color: var(--base);
+        }
+        body { 
+            text-align: center;
+            background: #193549;
+            color: white;
+            font-size: 50px;
+            font-weight: 100;
+            font-family: sans-serif;
+        }
+
+        input{
+            width: 100px;
+        }
+
+        .controls{
+            margin-bottom: 50px;
+        }
+    </style>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script>
+        const inputs = document.querySelectorAll('.controls input');
+
+        function handleUpdate(){
+            const suffix = this.dataset.sizing || '';
+            document.documentElement.style.setProperty(`--${this.name}`,this.value + suffix);
+        }
+
+        inputs.forEach(input => input.addEventListener('change', handleUpdate));
+        inputs.forEach(input => input.addEventListener('mousemove', handleUpdate));
+
+    </script>
+</body>
+
+</html>
