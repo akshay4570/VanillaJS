@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Shift Key</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="checkbox">
+            <input type="checkbox"  id="panel1" onchange="getVal(this.id)">
+            <p id="Word1">Hold Shift Key</p>
+        </div>
+        <div class="checkbox">
+            <input type="checkbox" id="panel2" onchange="getVal(this.id)">
+            <p id="Word2">Do Nothing!!</p>
+        </div>
+        <div class="checkbox">
+            <input type="checkbox" id="panel3" onchange="getVal(this.id)">
+            <p id="Word3">This is a simple Project</p>
+        </div>
+        <div class="checkbox">
+            <input type="checkbox" id="panel4" onchange="getVal(this.id)">
+            <p id="Word4">You are Awesome!!</p>
+        </div>
+        <div class="checkbox">
+            <input type="checkbox" id="panel5" onchange="getVal(this.id)">
+            <p id="Word5">Keep Going</p>
+        </div>
+        <div class="checkbox">
+            <input type="checkbox" id="panel6" onchange="getVal(this.id)">
+            <p id="Word6">Right Attitude to right life</p>
+        </div>
+        <div class="checkbox">
+            <input type="checkbox" id="panel7" onchange="getVal(this.id)">
+            <p id="Word7">How's it going??</p>
+        </div>
+        <div class="checkbox">
+            <input type="checkbox" id="panel8" onchange="getVal(this.id)">
+            <p id="Word8">Take a chill pill</p>
+        </div>
+        <div class="checkbox">
+            <input type="checkbox" id="panel9" onchange="getVal(this.id)">
+            <p id="Word9">Sounds clear to me</p>
+        </div>
+        <div class="checkbox">
+            <input type="checkbox" id="panel10" onchange="getVal(this.id)">
+            <p id="Word10">Rainy day</p>
+        </div>
+    </div>
+
+    <style>
+        html,
+        body {
+            margin: auto;
+            background: gray;
+            font-size: 20px;
+            font-weight: 200;
+            font-family: sans-serif;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 50px auto;
+            background: white;
+            border-radius: 20px;
+            display: block;
+            box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        .checkbox {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #F1F1F1;
+            margin-left: 2px;
+        }
+
+        input:checked+p {
+            background: #F9F9F9;
+            text-decoration: line-through;
+        }
+
+        input[type="checkbox"] {
+            margin: 20px;
+        }
+
+        p {
+            margin: 0;
+            padding: 20px;
+            transition: background 0.2s;
+            flex: 1;
+            font-family: 'helvetica neue';
+            font-size: 20px;
+            font-weight: 200;
+            border-left: 1px solid #D1E2FF;
+        }
+    </style>
+    <script src="JS/index.js"></script>
+</body>
+
+</html>
